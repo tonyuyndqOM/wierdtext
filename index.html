@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>wierdtext generator</title>
+	<script>
+		function load() {
+			const input = document.getElementById("a").value;
+            const layer = document.getElementById("b").value;
+            var rand;
+			let result = "";
+			for(let i = 0; i < input.length; i++) {
+				result += input[i];
+                for(let j = 0; j < layer; j++) {
+                	rand = Math.floor(Math.random() * (0x36f - 0x300) + 0x300);
+                    result += String.fromCharCode(rand);
+                }
+			}
+            document.getElementById("c").value = result;
+		}
+	</script>
+</head>
+<body>
+	<input placeholder="enter some text" oninput="load()" id="a"/>
+	<input placeholder="layers" type="number" min="0" oninput="load()" id="b"/>
+	<input placeholder="output should be here" oninput="load()" id="c"/>
+</body>
+</html>
