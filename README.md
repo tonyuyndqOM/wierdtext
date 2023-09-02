@@ -1,0 +1,2 @@
+# wierdtext
+wierd text generator
